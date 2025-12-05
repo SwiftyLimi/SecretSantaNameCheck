@@ -78,7 +78,7 @@ selectBtn.addEventListener('click', async () => {
     const selectedNameId = selectedNameSelect.value;
     
     if (!selectedNameId) {
-        showMessage('Please select a name', 'error');
+        showMessage('Please select the name you were drawn to', 'error');
         return;
     }
     

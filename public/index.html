@@ -10,7 +10,8 @@
     <div class="container">
         <header>
             <h1>🎅 Secret Santa Name Selection</h1>
-            <p class="subtitle">Select your Secret Santa name below</p>
+            <p class="subtitle">Select <strong>only</strong> the name you were drawn to</p>
+            <p class="instruction">⚠️ Important: Please select only the name that was assigned to you. Do not select any other name.</p>
         </header>
 
         <div class="stats-bar">
@@ -30,12 +31,12 @@
 
         <div class="selection-form">
             <div class="form-group">
-                <label for="selected-name">Select a Name:</label>
+                <label for="selected-name">Select the name you were drawn to:</label>
                 <select id="selected-name" required>
-                    <option value="">Choose a name...</option>
+                    <option value="">Choose the name assigned to you...</option>
                 </select>
             </div>
-            <button id="select-btn" class="btn-primary">Select Name</button>
+            <button id="select-btn" class="btn-primary">Confirm Selection</button>
             <div id="message" class="message"></div>
         </div>
 

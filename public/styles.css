@@ -32,6 +32,18 @@ header h1 {
 .subtitle {
     font-size: 1.1rem;
     opacity: 0.9;
+    margin-bottom: 10px;
+}
+
+.instruction {
+    font-size: 0.95rem;
+    opacity: 0.95;
+    background: rgba(255, 255, 255, 0.2);
+    padding: 10px 20px;
+    border-radius: 8px;
+    margin-top: 10px;
+    display: inline-block;
+    border: 1px solid rgba(255, 255, 255, 0.3);
 }
 
 .stats-bar {

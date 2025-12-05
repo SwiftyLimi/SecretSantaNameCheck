@@ -7,7 +7,7 @@ A simple web application for Secret Santa name selection that prevents duplicate
 - ✅ Prevents duplicate selections (each name can only be selected once)
 - ✅ Highlights selected names with a visual indicator
 - ✅ Shows selection count badge for each name
-- ✅ Displays who selected each name
+- ✅ Completely anonymous - no personal information required
 - ✅ Real-time statistics (total, selected, remaining)
 - ✅ Auto-refreshes every 10 seconds to show updates from other users
 
@@ -67,7 +67,24 @@ http://localhost:3000
 
 The app uses SQLite, which creates a local database file (`secret_santa.db`) automatically. No additional database setup is required!
 
-## Reset Selections
+## Admin Scripts
+
+### Remove a Specific Selection
+
+To remove a selection for a specific name (makes it available again):
+
+```bash
+node remove-selection.js <name>
+```
+
+Example:
+```bash
+node remove-selection.js Miran
+```
+
+This will remove the selection for "Miran" and make it available for selection again.
+
+### Reset All Selections
 
 If you need to reset all selections, you can use the API endpoint:
 ```bash
@@ -81,5 +98,5 @@ Or add a reset button to the UI if needed.
 - The database file (`secret_santa.db`) is created automatically on first run
 - All 14 names are pre-loaded into the database
 - The app prevents selecting a name that's already been selected
-- Each selection is timestamped and records who made the selection
+- All selections are anonymous and timestamped
 
