@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Secret Santa Name Selection</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🎅 Secret Santa Name Selection</h1>
+            <p class="subtitle">Select your Secret Santa name below</p>
+        </header>
+
+        <div class="stats-bar">
+            <div class="stat">
+                <span class="stat-label">Total Names:</span>
+                <span class="stat-value" id="total-names">-</span>
+            </div>
+            <div class="stat">
+                <span class="stat-label">Selected:</span>
+                <span class="stat-value" id="selected-count">-</span>
+            </div>
+            <div class="stat">
+                <span class="stat-label">Remaining:</span>
+                <span class="stat-value" id="remaining-count">-</span>
+            </div>
+        </div>
+
+        <div class="selection-form">
+            <div class="form-group">
+                <label for="your-name">Your Name:</label>
+                <input type="text" id="your-name" placeholder="Enter your name" required>
+            </div>
+            <div class="form-group">
+                <label for="selected-name">Select a Name:</label>
+                <select id="selected-name" required>
+                    <option value="">Choose a name...</option>
+                </select>
+            </div>
+            <button id="select-btn" class="btn-primary">Select Name</button>
+            <div id="message" class="message"></div>
+        </div>
+
+        <div class="names-grid" id="names-grid">
+            <!-- Names will be loaded here -->
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
+

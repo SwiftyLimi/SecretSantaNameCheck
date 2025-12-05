@@ -1,0 +1,19 @@
+{
+  "name": "secret-santa-name-check",
+  "version": "1.0.0",
+  "description": "Simple Secret Santa name selection web app",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "keywords": ["secret-santa", "name-selection"],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.18.2",
+    "sqlite3": "^5.1.6",
+    "cors": "^2.8.5"
+  }
+}
+

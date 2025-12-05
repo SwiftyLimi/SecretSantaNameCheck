@@ -1,0 +1,6 @@
+node_modules/
+secret_santa.db
+.env
+.DS_Store
+*.log
+
