@@ -4,7 +4,6 @@ const API_BASE = window.location.origin;
 // DOM elements
 const namesGrid = document.getElementById('names-grid');
 const selectedNameSelect = document.getElementById('selected-name');
-const yourNameInput = document.getElementById('your-name');
 const selectBtn = document.getElementById('select-btn');
 const messageDiv = document.getElementById('message');
 const totalNamesSpan = document.getElementById('total-names');
@@ -76,13 +75,7 @@ function updateSelectDropdown() {
 
 // Handle selection
 selectBtn.addEventListener('click', async () => {
-    const yourName = yourNameInput.value.trim();
     const selectedNameId = selectedNameSelect.value;
-    
-    if (!yourName) {
-        showMessage('Please enter your name', 'error');
-        return;
-    }
     
     if (!selectedNameId) {
         showMessage('Please select a name', 'error');
@@ -106,8 +99,7 @@ selectBtn.addEventListener('click', async () => {
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify({
-                nameId: parseInt(selectedNameId),
-                selectedBy: yourName
+                nameId: parseInt(selectedNameId)
             })
         });
         
@@ -115,7 +107,6 @@ selectBtn.addEventListener('click', async () => {
         
         if (response.ok) {
             showMessage('Success! Your selection has been recorded.', 'success');
-            yourNameInput.value = '';
             selectedNameSelect.value = '';
             await loadNames();
             await loadStats();
@@ -140,12 +131,6 @@ function showMessage(text, type) {
 }
 
 // Allow Enter key to submit
-yourNameInput.addEventListener('keypress', (e) => {
-    if (e.key === 'Enter') {
-        selectBtn.click();
-    }
-});
-
 selectedNameSelect.addEventListener('keypress', (e) => {
     if (e.key === 'Enter') {
         selectBtn.click();

@@ -91,10 +91,10 @@ app.get('/api/names', (req, res) => {
 
 // Select a name
 app.post('/api/select', (req, res) => {
-  const { nameId, selectedBy } = req.body;
+  const { nameId } = req.body;
 
-  if (!nameId || !selectedBy) {
-    res.status(400).json({ error: 'Name ID and selected by are required' });
+  if (!nameId) {
+    res.status(400).json({ error: 'Name ID is required' });
     return;
   }
 
@@ -110,10 +110,10 @@ app.post('/api/select', (req, res) => {
       return;
     }
 
-    // Insert selection
+    // Insert selection (anonymous)
     db.run(
       'INSERT INTO selections (name_id, selected_by) VALUES (?, ?)',
-      [nameId, selectedBy],
+      [nameId, 'Anonymous'],
       function(err) {
         if (err) {
           res.status(500).json({ error: err.message });
